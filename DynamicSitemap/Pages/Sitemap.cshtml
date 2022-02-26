@@ -1,0 +1,35 @@
+﻿@page "/Sitemap.xml"
+@model DynamicSitemap.Pages.SitemapModel
+@{
+
+}
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>https://example.com/</loc>
+        <lastmod>@DateTime.Now.ToString("yyyy-MM-dd")</lastmod>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+        <loc>https://example.com/Login</loc>
+        <lastmod>@DateTime.Now.ToString("yyyy-MM-dd")</lastmod>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+        <loc>https://example.com/Register</loc>
+        <lastmod>@DateTime.Now.ToString("yyyy-MM-dd")</lastmod>
+        <priority>1.00</priority>
+    </url>
+
+    @foreach(var item in Model.TestItems)
+    {
+        <url>
+            <loc>https://example.com/Items/@item.TestId</loc>
+            <lastmod>@DateTime.Now.ToString("yyyy-MM-dd")</lastmod>
+            <priority>0.80</priority>
+        </url>   
+    }
+
+</urlset>
